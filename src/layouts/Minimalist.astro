@@ -1,0 +1,61 @@
+---
+import "@fontsource/source-sans-3";
+import "@fontsource/source-serif-4";
+import "../styles.css";
+import { CV_HEADER_LINKS, CV_NAME } from "../constants/cv";
+
+type Props = {
+  frontmatter: {
+    title: string;
+    pdfLink: string;
+    noIndex?: boolean;
+    description?: string;
+  };
+};
+
+const { PDF_VIEW, FORCE_THEME = "" } = import.meta.env;
+
+const { title, noIndex, description } = Astro.props.frontmatter as Props["frontmatter"];
+
+---
+
+<!doctype html>
+<html lang="en" class={FORCE_THEME}>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="description" content={description || title} />
+    {noIndex && <meta name="robots" content="noindex" />}
+    <title>{title}</title>
+  </head>
+  <body class={!PDF_VIEW ? "bg-slate-50 dark:bg-slate-950" : ""}>
+    <div class="container mx-auto flex justify-center">
+      <article class="minimalist relative prose prose-slate bg-white">
+        <header class="cv-topbar" aria-label="Resume header">
+          <div class="cv-topbar__name">{CV_NAME}</div>
+          <nav class="cv-topbar__links" aria-label="Contact links">
+            {CV_HEADER_LINKS.map((link, idx) => (
+              <>
+                <a
+                  href={link.href}
+                  target={!link.href.startsWith("mailto:") ? "_blank" : undefined}
+                  rel={!link.href.startsWith("mailto:") ? "noreferrer" : undefined}
+                >
+                  {link.label}
+                </a>
+                {idx < CV_HEADER_LINKS.length - 1 && (
+                  <span class="cv-topbar__sep" aria-hidden="true">
+                    |
+                  </span>
+                )}
+              </>
+            ))}
+          </nav>
+        </header>
+        <div class="cv-content">
+          <slot />
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

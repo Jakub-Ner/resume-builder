@@ -1,0 +1,206 @@
+:root {
+  --cv-ink: #0f172a;
+  --cv-muted: #475569;
+  --cv-rule: #e2e8f0;
+  --cv-link: #0f172a;
+  --cv-font-body: "Source Serif 4", serif;
+  --cv-font-heading: "Source Sans 3", sans-serif;
+}
+
+body {
+  font-family: var(--cv-font-body);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--cv-ink);
+}
+
+::selection {
+  background: rgba(15, 23, 42, 0.14);
+}
+
+article.minimalist {
+  padding: 2.25rem 2.25rem 2.25rem;
+  box-sizing: border-box;
+  width: 595px;
+  min-width: 595px;
+  max-width: 595px;
+  max-inline-size: 595px;
+}
+
+article.minimalist .cv-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+article.minimalist .cv-topbar__name {
+  font-family: var(--cv-font-heading);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.2;
+  color: var(--cv-ink);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+article.minimalist .cv-topbar__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 0.25rem;
+  max-width: 32rem;
+  font-size: 0.68rem;
+  line-height: 1.25;
+}
+
+article.minimalist .cv-topbar__sep {
+  color: var(--cv-muted);
+  font-weight: 400;
+  padding: 0 0.15rem;
+}
+
+article.minimalist .cv-topbar__links a {
+  font-weight: 650;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+article.minimalist .cv-topbar__links a:hover {
+  border-bottom-color: currentColor;
+}
+
+article.minimalist .cv-content > :first-child {
+  margin-top: 0;
+}
+
+article.minimalist .cv-content > h2:first-child {
+  margin-top: .35rem;
+}
+
+article.minimalist h1,
+article.minimalist h2,
+article.minimalist h3,
+article.minimalist h4 {
+  font-family: var(--cv-font-heading);
+}
+
+article.minimalist h1 {
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.2;
+}
+
+article.minimalist h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  font-size: 0.64rem;
+  color: var(--cv-muted);
+  border-bottom: 1px solid var(--cv-rule);
+  padding-bottom: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+article.minimalist h3 {
+  text-transform: none;
+  letter-spacing: -0.01em;
+  font-weight: 650;
+  font-size: 0.72rem;
+  margin-top: .3rem;
+}
+
+article.minimalist h4 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  font-size: 0.72rem;
+  color: var(--cv-muted);
+  margin-top: 0;
+}
+
+article.minimalist p {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin-top: 0.35rem;
+}
+
+article.minimalist a {
+  color: var(--cv-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+article.minimalist a:hover {
+  color: #334155;
+}
+
+article.minimalist ul {
+  margin-top: 0.25rem;
+  padding-left: 1.1rem;
+}
+
+article.minimalist li {
+  font-size: 0.72rem;
+  line-height: 1.45;
+  margin-top: 0.18rem;
+}
+
+article.minimalist table {
+  margin-top: 1rem;
+}
+
+article.minimalist thead {
+  border-bottom: 1px solid var(--cv-rule);
+}
+
+article.minimalist th,
+article.minimalist td {
+  padding: 0.2rem 0;
+}
+
+article.minimalist td {
+  color: var(--cv-muted);
+}
+
+@page {
+  size: A4;
+  margin: 2.25rem;
+  padding: 2.25rem;
+}
+
+@media print {
+  article.minimalist {
+    width: auto;
+    margin: 0;
+    padding: 0 !important; 
+    box-shadow: none;
+  }
+
+  .cv-content {
+    display: block;
+  }
+
+  h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  p, ul, li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+   */
+  .cv-content > h3 + ul,
+  .cv-content > h3 + p {
+    break-before: avoid;
+  }
+}
