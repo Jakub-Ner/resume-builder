@@ -18,7 +18,7 @@
     "@astrojs/tailwind": "^5.1.4",
     "@fontsource/source-sans-3": "^5.2.6",
     "@fontsource/source-serif-4": "^5.2.6",
-    "@netlify/plugin-lighthouse": "^6.0.1",
+    "@netlify/plugin-lighthouse": "^6.0.4",
     "@playwright/test": "^1.52.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.13.8",
