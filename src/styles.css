@@ -51,9 +51,9 @@ article.minimalist .cv-topbar__links {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: baseline;
-  gap: 0.25rem;
+  gap: 0.2rem;
   max-width: 32rem;
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   line-height: 1.25;
 }
 
@@ -78,7 +78,7 @@ article.minimalist .cv-content > :first-child {
 }
 
 article.minimalist .cv-content > h2:first-child {
-  margin-top: .35rem;
+  margin-top: 0.35rem;
 }
 
 article.minimalist h1,
@@ -112,7 +112,7 @@ article.minimalist h3 {
   letter-spacing: -0.01em;
   font-weight: 650;
   font-size: 0.72rem;
-  margin-top: .3rem;
+  margin-top: 0.3rem;
 }
 
 article.minimalist h4 {
@@ -173,32 +173,40 @@ article.minimalist td {
 @page {
   size: A4;
   margin: 2.25rem;
-  padding: 2.25rem;
 }
 
 @media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+
   article.minimalist {
     width: auto;
     margin: 0;
-    padding: 0 !important; 
+    padding: 0 !important;
     box-shadow: none;
+    border: none !important;
+    outline: none !important;
   }
 
   .cv-content {
     display: block;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     break-after: avoid;
     page-break-after: avoid;
   }
 
-  p, ul, li {
+  p,
+  ul,
+  li {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-   */
   .cv-content > h3 + ul,
   .cv-content > h3 + p {
     break-before: avoid;
