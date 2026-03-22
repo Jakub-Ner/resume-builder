@@ -10,7 +10,7 @@ This project is a personal fork of [astro-resume](https://github.com/EmaSuriano/
 npm i
 ```
 
-2a. Start the development server:
+2. Start the development server:
 
 ```bash
 npm run dev
@@ -22,7 +22,7 @@ npm run dev
 6. Use print preview to verify page splits and spacing.
 7. Choose **Save as PDF** and export your final resume.
 
-2b (Alternative) Generate a PDF directly from the command line, it would be saved in out/:
+(Alternative) Generate a PDF directly from the command line while server is running, it would be saved in out/:
 
 ```bash
 npm run generate-pdf
